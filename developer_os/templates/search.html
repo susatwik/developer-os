@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Search · Developer OS{% endblock %}
+
+{% block content %}
+  <div class="panel">
+    <h2>Search Entries</h2>
+    <p class="muted">Find notes, coding entries, and job applications across your current JSON store.</p>
+    <form action="/search" method="get">
+      <label>Search term <input name="q" value="{{ results.query }}" placeholder="Search by subject, topic, company, problem name..." /></label>
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+  <section class="grid cards" style="margin-top: 20px;">
+    <div class="panel metric">
+      <strong>{{ results.total }}</strong>
+      <span>Total Matches</span>
+    </div>
+    <div class="panel metric">
+      <strong>{{ results.notes | length }}</strong>
+      <span>Notes</span>
+    </div>
+    <div class="panel metric">
+      <strong>{{ results.problems | length }}</strong>
+      <span>Coding Entries</span>
+    </div>
+    <div class="panel metric">
+      <strong>{{ results.applications | length }}</strong>
+      <span>Applications</span>
+    </div>
+  </section>
+
+  <section class="grid two-col" style="margin-top: 20px;">
+    <article class="panel">
+      <h3>Learning Notes</h3>
+      <div class="list">
+        {% for note in results.notes %}
+          <div class="entry">
+            <h4>{{ note.subject }} · {{ note.topic }}</h4>
+            <p>{{ note.summary }}</p>
+            <p class="muted">{{ note.date }}</p>
+          </div>
+        {% else %}
+          <div class="entry">No matching notes.</div>
+        {% endfor %}
+      </div>
+    </article>
+
+    <article class="panel">
+      <h3>Coding Entries</h3>
+      <div class="list">
+        {% for problem in results.problems %}
+          <div class="entry">
+            <h4>{{ problem.platform }} · {{ problem.name }}</h4>
+            <p>{{ problem.topic }} · {{ problem.difficulty }}</p>
+            <p class="muted">{{ problem.date }}</p>
+          </div>
+        {% else %}
+          <div class="entry">No matching coding entries.</div>
+        {% endfor %}
+      </div>
+    </article>
+  </section>
+
+  <section class="panel" style="margin-top: 20px;">
+    <h3>Job Applications</h3>
+    <div class="list">
+      {% for application in results.applications %}
+        <div class="entry">
+          <h4>{{ application.company }} · {{ application.role }}</h4>
+          <p>{{ application.status }}</p>
+          <p class="muted">{{ application.application_date }}</p>
+        </div>
+      {% else %}
+        <div class="entry">No matching applications.</div>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

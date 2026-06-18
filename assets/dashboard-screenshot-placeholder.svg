@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Developer OS Dashboard Placeholder</title>
+  <desc id="desc">A placeholder illustration for the Developer OS dashboard screenshot.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#14b8a6" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" rx="32" fill="url(#bg)" />
+  <rect x="72" y="72" width="1136" height="576" rx="24" fill="#111827" stroke="#334155" />
+  <rect x="96" y="104" width="180" height="28" rx="14" fill="url(#accent)" />
+  <rect x="96" y="168" width="360" height="160" rx="20" fill="#1f2937" stroke="#334155" />
+  <rect x="480" y="168" width="300" height="160" rx="20" fill="#1f2937" stroke="#334155" />
+  <rect x="804" y="168" width="372" height="160" rx="20" fill="#1f2937" stroke="#334155" />
+  <rect x="96" y="352" width="1080" height="260" rx="20" fill="#1f2937" stroke="#334155" />
+  <text x="96" y="124" fill="#e2e8f0" font-size="28" font-family="Inter, Arial, sans-serif">Developer OS</text>
+  <text x="96" y="200" fill="#94a3b8" font-size="20" font-family="Inter, Arial, sans-serif">Dashboard screenshot placeholder</text>
+  <text x="96" y="232" fill="#64748b" font-size="16" font-family="Inter, Arial, sans-serif">Replace this SVG with a real screenshot after the first public release.</text>
+  <text x="480" y="200" fill="#94a3b8" font-size="20" font-family="Inter, Arial, sans-serif">Stats cards</text>
+  <text x="804" y="200" fill="#94a3b8" font-size="20" font-family="Inter, Arial, sans-serif">Recent activity</text>
+  <text x="96" y="390" fill="#94a3b8" font-size="20" font-family="Inter, Arial, sans-serif">The actual product dashboard will render here.</text>
+</svg>

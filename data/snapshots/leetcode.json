@@ -1,0 +1,108 @@
+{
+  "snapshots": [
+    {
+      "fetched_at": "2026-06-18T04:45:31.581061+00:00",
+      "status": "error",
+      "error": "Missing LeetCode username. Set it in config.yaml or the matching DEVOS_* environment variable.",
+      "data": {
+        "username": "",
+        "total_solved": 0,
+        "easy_solved": 0,
+        "medium_solved": 0,
+        "hard_solved": 0,
+        "contest_rating": null
+      }
+    },
+    {
+      "fetched_at": "2026-06-18T04:46:06.174950+00:00",
+      "status": "error",
+      "error": "Missing LeetCode username. Set it in config.yaml or the matching DEVOS_* environment variable.",
+      "data": {
+        "username": "",
+        "total_solved": 0,
+        "easy_solved": 0,
+        "medium_solved": 0,
+        "hard_solved": 0,
+        "contest_rating": null
+      }
+    },
+    {
+      "fetched_at": "2026-06-18T04:46:28.001997+00:00",
+      "status": "error",
+      "error": "Missing LeetCode username. Set it in config.yaml or the matching DEVOS_* environment variable.",
+      "data": {
+        "username": "",
+        "total_solved": 0,
+        "easy_solved": 0,
+        "medium_solved": 0,
+        "hard_solved": 0,
+        "contest_rating": null
+      }
+    },
+    {
+      "fetched_at": "2026-06-18T05:06:46.723294+00:00",
+      "status": "error",
+      "error": "Missing LeetCode username. Set it in config.yaml or the matching DEVOS_* environment variable.",
+      "data": {
+        "username": "",
+        "total_solved": 0,
+        "easy_solved": 0,
+        "medium_solved": 0,
+        "hard_solved": 0,
+        "contest_rating": null
+      }
+    },
+    {
+      "fetched_at": "2026-06-18T05:15:06.175327+00:00",
+      "status": "error",
+      "error": "Missing LeetCode username. Set it in config.yaml or the matching DEVOS_* environment variable.",
+      "data": {
+        "username": "",
+        "total_solved": 0,
+        "easy_solved": 0,
+        "medium_solved": 0,
+        "hard_solved": 0,
+        "contest_rating": null
+      }
+    },
+    {
+      "fetched_at": "2026-06-18T05:17:33.967023+00:00",
+      "status": "error",
+      "error": "Missing LeetCode username. Set it in config.yaml or the matching DEVOS_* environment variable.",
+      "data": {
+        "username": "",
+        "total_solved": 0,
+        "easy_solved": 0,
+        "medium_solved": 0,
+        "hard_solved": 0,
+        "contest_rating": null
+      }
+    },
+    {
+      "fetched_at": "2026-06-18T05:17:57.825876+00:00",
+      "status": "error",
+      "error": "Missing LeetCode username. Set it in config.yaml or the matching DEVOS_* environment variable.",
+      "data": {
+        "username": "",
+        "total_solved": 0,
+        "easy_solved": 0,
+        "medium_solved": 0,
+        "hard_solved": 0,
+        "contest_rating": null
+      }
+    },
+    {
+      "fetched_at": "2026-06-18T05:27:08.878594+00:00",
+      "status": "error",
+      "error": "Missing LeetCode username. Set it in config.yaml or the matching DEVOS_* environment variable.",
+      "data": {
+        "username": "",
+        "total_solved": 0,
+        "easy_solved": 0,
+        "medium_solved": 0,
+        "hard_solved": 0,
+        "contest_rating": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+name: Developer OS Monthly Report
+
+on:
+  schedule:
+    - cron: "0 4 1 * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    env:
+      DEVOS_GITHUB_USERNAME: ${{ vars.DEVOS_GITHUB_USERNAME }}
+      DEVOS_GITHUB_TOKEN: ${{ secrets.DEVOS_GITHUB_TOKEN }}
+      DEVOS_LEETCODE_USERNAME: ${{ vars.DEVOS_LEETCODE_USERNAME }}
+      DEVOS_LEETCODE_SESSION_COOKIE: ${{ secrets.DEVOS_LEETCODE_SESSION_COOKIE }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run monthly report
+        run: python3 scripts/update.py generate-dashboard --report monthly
+
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md data/reports/dashboard.md data/reports/monthly.md
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: monthly developer os report"
+            git push
+          fi

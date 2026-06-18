@@ -1,0 +1,15 @@
+# Developer OS configuration
+#
+# Leave values blank to provide them through environment variables.
+
+github:
+  username: ""
+  token: ""
+
+leetcode:
+  username: ""
+  session_cookie: ""
+
+storage:
+  snapshots_dir: "data/snapshots"
+  dashboard_path: "README.md"

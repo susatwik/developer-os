@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard · Developer OS{% endblock %}
+
+{% block content %}
+  {% if message %}
+    <div class="notice">{{ message }}</div>
+  {% endif %}
+
+  <div class="panel">
+    <div class="section-title">
+      <div>
+        <h2>Dashboard</h2>
+        <p class="muted">Snapshot as of {{ today }}. Use the form below to add fresh activity or refresh live integrations.</p>
+      </div>
+      <form action="/refresh" method="post">
+        <button type="submit">Refresh live data</button>
+      </form>
+    </div>
+  </div>
+
+  <section class="grid cards" style="margin-top: 20px;">
+    <div class="panel metric">
+      <strong>{{ context.learning_stats.total_notes }}</strong>
+      <span>Total Notes</span>
+    </div>
+    <div class="panel metric">
+      <strong>{{ context.coding_stats.total_problems_solved }}</strong>
+      <span>Total Problems Solved</span>
+    </div>
+    <div class="panel metric">
+      <strong>{{ context.job_stats.total_applications }}</strong>
+      <span>Applications Sent</span>
+    </div>
+    <div class="panel metric">
+      <strong>{{ context.job_stats.interviews }}</strong>
+      <span>Interviews</span>
+    </div>
+    <div class="panel metric">
+      <strong>{{ context.job_stats.offers }}</strong>
+      <span>Offers</span>
+    </div>
+    <div class="panel metric">
+      <strong>{{ context.github_stats.contributions_total or 0 }}</strong>
+      <span>GitHub Contributions</span>
+    </div>
+  </section>
+
+  <section class="grid two-col" style="margin-top: 20px;">
+    <article class="panel">
+      <div class="section-title">
+        <h3>Quick Add Note</h3>
+        <span class="pill">Learning Tracker</span>
+      </div>
+      <form action="/notes" method="post">
+        <div class="form-row">
+          <label>Subject <input name="subject" required /></label>
+          <label>Topic <input name="topic" required /></label>
+        </div>
+        <label>Summary <textarea name="summary" required></textarea></label>
+        <label>Date <input type="date" name="note_date" value="{{ today }}" /></label>
+        <button type="submit">Save Note</button>
+      </form>
+    </article>
+
+    <article class="panel">
+      <div class="section-title">
+        <h3>Quick Add Coding Entry</h3>
+        <span class="pill">Coding Tracker</span>
+      </div>
+      <form action="/coding" method="post">
+        <div class="form-row">
+          <label>
+            Platform
+            <select name="platform" required>
+              <option value="leetcode">LeetCode</option>
+              <option value="gfg">GeeksforGeeks</option>
+            </select>
+          </label>
+          <label>
+            Difficulty
+            <select name="difficulty" required>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </label>
+        </div>
+        <label>Problem Name <input name="name" required /></label>
+        <label>Topic <input name="topic" required /></label>
+        <label>Date <input type="date" name="problem_date" value="{{ today }}" /></label>
+        <button type="submit">Save Problem</button>
+      </form>
+    </article>
+  </section>
+
+  <section class="grid two-col" style="margin-top: 20px;">
+    <article class="panel">
+      <div class="section-title">
+        <h3>Quick Add Job Application</h3>
+        <span class="pill">Job Tracker</span>
+      </div>
+      <form action="/applications" method="post">
+        <div class="form-row">
+          <label>Company <input name="company" required /></label>
+          <label>Role <input name="role" required /></label>
+        </div>
+        <div class="form-row">
+          <label>
+            Status
+            <select name="status" required>
+              <option>Applied</option>
+              <option>OA</option>
+              <option>Interview</option>
+              <option>Rejected</option>
+              <option>Offer</option>
+            </select>
+          </label>
+          <label>Application Date <input type="date" name="application_date" value="{{ today }}" /></label>
+        </div>
+        <button type="submit">Save Application</button>
+      </form>
+    </article>
+
+    <article class="panel">
+      <div class="section-title">
+        <h3>Search Entries</h3>
+        <span class="pill">Query your data</span>
+      </div>
+      <form action="/search" method="get">
+        <label>Search term <input name="q" placeholder="dbms, leetcode, acme, interview..." /></label>
+        <button type="submit">Search</button>
+      </form>
+      <div style="margin-top: 18px;">
+        <h4>Recent Activity</h4>
+        <ul class="list">
+          {% for item in context.recent_activity %}
+            <li class="entry">{{ item }}</li>
+          {% else %}
+            <li class="entry">No activity yet.</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section class="grid two-col" style="margin-top: 20px;">
+    <article class="panel">
+      <h3>Learning Overview</h3>
+      <p class="muted">Subjects</p>
+      <ul>
+        {% for subject, count in context.learning_stats.subjects.items() %}
+          <li>{{ subject }}: {{ count }}</li>
+        {% else %}
+          <li>No learning notes yet.</li>
+        {% endfor %}
+      </ul>
+    </article>
+
+    <article class="panel">
+      <h3>Job Overview</h3>
+      <p class="muted">Application statuses</p>
+      <ul>
+        {% for status, count in context.job_stats.status_counts.items() %}
+          <li>{{ status }}: {{ count }}</li>
+        {% else %}
+          <li>No applications yet.</li>
+        {% endfor %}
+      </ul>
+    </article>
+  </section>
+{% endblock %}

@@ -1,0 +1,116 @@
+{
+  "snapshots": [
+    {
+      "fetched_at": "2026-06-18T04:45:31.579896+00:00",
+      "status": "error",
+      "error": "Missing GitHub username. Set it in config.yaml or the matching DEVOS_* environment variable.",
+      "data": {
+        "username": "",
+        "public_repos": 0,
+        "stars": 0,
+        "followers": 0,
+        "contributions_total": 0,
+        "recent_repositories": [],
+        "contribution_days": []
+      }
+    },
+    {
+      "fetched_at": "2026-06-18T04:46:06.174427+00:00",
+      "status": "error",
+      "error": "Missing GitHub username. Set it in config.yaml or the matching DEVOS_* environment variable.",
+      "data": {
+        "username": "",
+        "public_repos": 0,
+        "stars": 0,
+        "followers": 0,
+        "contributions_total": 0,
+        "recent_repositories": [],
+        "contribution_days": []
+      }
+    },
+    {
+      "fetched_at": "2026-06-18T04:46:28.001164+00:00",
+      "status": "error",
+      "error": "Missing GitHub username. Set it in config.yaml or the matching DEVOS_* environment variable.",
+      "data": {
+        "username": "",
+        "public_repos": 0,
+        "stars": 0,
+        "followers": 0,
+        "contributions_total": 0,
+        "recent_repositories": [],
+        "contribution_days": []
+      }
+    },
+    {
+      "fetched_at": "2026-06-18T05:06:46.721925+00:00",
+      "status": "error",
+      "error": "Missing GitHub username. Set it in config.yaml or the matching DEVOS_* environment variable.",
+      "data": {
+        "username": "",
+        "public_repos": 0,
+        "stars": 0,
+        "followers": 0,
+        "contributions_total": 0,
+        "recent_repositories": [],
+        "contribution_days": []
+      }
+    },
+    {
+      "fetched_at": "2026-06-18T05:15:06.173842+00:00",
+      "status": "error",
+      "error": "Missing GitHub username. Set it in config.yaml or the matching DEVOS_* environment variable.",
+      "data": {
+        "username": "",
+        "public_repos": 0,
+        "stars": 0,
+        "followers": 0,
+        "contributions_total": 0,
+        "recent_repositories": [],
+        "contribution_days": []
+      }
+    },
+    {
+      "fetched_at": "2026-06-18T05:17:33.965843+00:00",
+      "status": "error",
+      "error": "Missing GitHub username. Set it in config.yaml or the matching DEVOS_* environment variable.",
+      "data": {
+        "username": "",
+        "public_repos": 0,
+        "stars": 0,
+        "followers": 0,
+        "contributions_total": 0,
+        "recent_repositories": [],
+        "contribution_days": []
+      }
+    },
+    {
+      "fetched_at": "2026-06-18T05:17:57.825077+00:00",
+      "status": "error",
+      "error": "Missing GitHub username. Set it in config.yaml or the matching DEVOS_* environment variable.",
+      "data": {
+        "username": "",
+        "public_repos": 0,
+        "stars": 0,
+        "followers": 0,
+        "contributions_total": 0,
+        "recent_repositories": [],
+        "contribution_days": []
+      }
+    },
+    {
+      "fetched_at": "2026-06-18T05:27:08.877952+00:00",
+      "status": "error",
+      "error": "Missing GitHub username. Set it in config.yaml or the matching DEVOS_* environment variable.",
+      "data": {
+        "username": "",
+        "public_repos": 0,
+        "stars": 0,
+        "followers": 0,
+        "contributions_total": 0,
+        "recent_repositories": [],
+        "contribution_days": []
+      }
+    }
+  ]
+}

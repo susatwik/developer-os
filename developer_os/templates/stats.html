@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block title %}Statistics · Developer OS{% endblock %}
+
+{% block content %}
+  <div class="panel">
+    <h2>Statistics</h2>
+    <p class="muted">Detailed snapshot of your tracker data and live integrations.</p>
+  </div>
+
+  <section class="grid cards" style="margin-top: 20px;">
+    <div class="panel metric">
+      <strong>{{ context.learning_stats.total_notes }}</strong>
+      <span>Learning Notes</span>
+    </div>
+    <div class="panel metric">
+      <strong>{{ context.coding_stats.leetcode_total }}</strong>
+      <span>LeetCode Problems</span>
+    </div>
+    <div class="panel metric">
+      <strong>{{ context.coding_stats.gfg_total }}</strong>
+      <span>GeeksforGeeks Problems</span>
+    </div>
+    <div class="panel metric">
+      <strong>{{ context.job_stats.interviews }}</strong>
+      <span>Interviews</span>
+    </div>
+    <div class="panel metric">
+      <strong>{{ context.job_stats.offers }}</strong>
+      <span>Offers</span>
+    </div>
+    <div class="panel metric">
+      <strong>{{ context.leetcode_stats.total_solved }}</strong>
+      <span>LeetCode Solved</span>
+    </div>
+  </section>
+
+  <section class="grid two-col" style="margin-top: 20px;">
+    <article class="panel">
+      <h3>Coding Statistics</h3>
+      <ul>
+        <li>Easy solved: {{ context.leetcode_stats.easy_solved }}</li>
+        <li>Medium solved: {{ context.leetcode_stats.medium_solved }}</li>
+        <li>Hard solved: {{ context.leetcode_stats.hard_solved }}</li>
+        <li>Contest rating: {{ context.leetcode_stats.contest_rating or "N/A" }}</li>
+      </ul>
+      <h4>Trend summary</h4>
+      <ul>
+        {% for item in context.leetcode_trend %}
+          <li>{{ item }}</li>
+        {% else %}
+          <li>No trend data yet.</li>
+        {% endfor %}
+      </ul>
+    </article>
+
+    <article class="panel">
+      <h3>GitHub Statistics</h3>
+      <ul>
+        <li>Public repositories: {{ context.github_stats.public_repos }}</li>
+        <li>Stars: {{ context.github_stats.stars }}</li>
+        <li>Followers: {{ context.github_stats.followers }}</li>
+        <li>Contributions this year: {{ context.github_stats.contributions_total }}</li>
+      </ul>
+      <h4>Trend summary</h4>
+      <ul>
+        {% for item in context.github_trend %}
+          <li>{{ item }}</li>
+        {% else %}
+          <li>No trend data yet.</li>
+        {% endfor %}
+      </ul>
+    </article>
+  </section>
+
+  <section class="grid two-col" style="margin-top: 20px;">
+    <article class="panel">
+      <h3>Learning Breakdown</h3>
+      <ul>
+        {% for subject, count in context.learning_stats.subjects.items() %}
+          <li>{{ subject }}: {{ count }}</li>
+        {% else %}
+          <li>No learning notes yet.</li>
+        {% endfor %}
+      </ul>
+    </article>
+
+    <article class="panel">
+      <h3>Job Breakdown</h3>
+      <ul>
+        {% for status, count in context.job_stats.status_counts.items() %}
+          <li>{{ status }}: {{ count }}</li>
+        {% else %}
+          <li>No job applications yet.</li>
+        {% endfor %}
+      </ul>
+    </article>
+  </section>
+{% endblock %}
