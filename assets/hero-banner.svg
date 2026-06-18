@@ -1,0 +1,509 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="240" viewBox="0 0 800 240">
+<defs>
+
+  <!-- BACKGROUNDS -->
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#07101E"/>
+    <stop offset="55%" stop-color="#0D1828"/>
+    <stop offset="100%" stop-color="#111827"/>
+  </linearGradient>
+  <linearGradient id="bgRadial" x1="0.3" y1="0" x2="0.7" y2="1">
+    <stop offset="0%" stop-color="#162040" stop-opacity="0.7"/>
+    <stop offset="100%" stop-color="#07101E" stop-opacity="0"/>
+  </linearGradient>
+
+  <!-- GRADIENTS -->
+  <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#00D4FF"/>
+    <stop offset="45%" stop-color="#6366F1"/>
+    <stop offset="100%" stop-color="#06B6D4"/>
+  </linearGradient>
+  <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#E0F7FF"/>
+    <stop offset="30%" stop-color="#00D4FF"/>
+    <stop offset="65%" stop-color="#818CF8"/>
+    <stop offset="100%" stop-color="#06B6D4"/>
+  </linearGradient>
+  <linearGradient id="shimmerGrad" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="white" stop-opacity="0"/>
+    <stop offset="45%" stop-color="white" stop-opacity="0.18"/>
+    <stop offset="55%" stop-color="white" stop-opacity="0.18"/>
+    <stop offset="100%" stop-color="white" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="cardGrad" x1="0" y1="0" x2="0.2" y2="1">
+    <stop offset="0%" stop-color="#19263E" stop-opacity="0.98"/>
+    <stop offset="40%" stop-color="#111E30" stop-opacity="0.99"/>
+    <stop offset="100%" stop-color="#0B1524" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="cardTopSheen" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.04"/>
+    <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="cardBorderGrad" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#00D4FF" stop-opacity="0.55"/>
+    <stop offset="40%" stop-color="#6366F1" stop-opacity="0.35"/>
+    <stop offset="100%" stop-color="#06B6D4" stop-opacity="0.15"/>
+  </linearGradient>
+  <linearGradient id="outerBorderGrad" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#00D4FF" stop-opacity="0.4"/>
+    <stop offset="50%" stop-color="#6366F1" stop-opacity="0.2"/>
+    <stop offset="100%" stop-color="#06B6D4" stop-opacity="0.4"/>
+  </linearGradient>
+  <linearGradient id="chartAreaGrad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#00D4FF" stop-opacity="0.25"/>
+    <stop offset="70%" stop-color="#6366F1" stop-opacity="0.06"/>
+    <stop offset="100%" stop-color="#00D4FF" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="avatarGlassGrad" x1="0.2" y1="0" x2="0.8" y2="1">
+    <stop offset="0%" stop-color="#1E2E46"/>
+    <stop offset="100%" stop-color="#0E1929"/>
+  </linearGradient>
+  <linearGradient id="divGrad" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#1E3A5F" stop-opacity="0"/>
+    <stop offset="30%" stop-color="#1E3A5F" stop-opacity="1"/>
+    <stop offset="70%" stop-color="#1E3A5F" stop-opacity="1"/>
+    <stop offset="100%" stop-color="#1E3A5F" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="pillGrad1" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#0C2540" stop-opacity="0.9"/>
+    <stop offset="100%" stop-color="#091830" stop-opacity="0.95"/>
+  </linearGradient>
+  <linearGradient id="pillGrad2" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#170F38" stop-opacity="0.9"/>
+    <stop offset="100%" stop-color="#0F0A28" stop-opacity="0.95"/>
+  </linearGradient>
+  <linearGradient id="pillGrad3" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#0A2228" stop-opacity="0.9"/>
+    <stop offset="100%" stop-color="#071A1F" stop-opacity="0.95"/>
+  </linearGradient>
+  <linearGradient id="statCard1" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0D2038"/>
+    <stop offset="100%" stop-color="#091528"/>
+  </linearGradient>
+  <linearGradient id="statCard2" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#18103A"/>
+    <stop offset="100%" stop-color="#100A28"/>
+  </linearGradient>
+  <linearGradient id="statCard3" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0A2128"/>
+    <stop offset="100%" stop-color="#071620"/>
+  </linearGradient>
+  <linearGradient id="footerGrad" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#1E3A5F" stop-opacity="0"/>
+    <stop offset="20%" stop-color="#334155" stop-opacity="0.8"/>
+    <stop offset="80%" stop-color="#334155" stop-opacity="0.8"/>
+    <stop offset="100%" stop-color="#1E3A5F" stop-opacity="0"/>
+  </linearGradient>
+
+  <!-- FILTERS -->
+  <filter id="softGlow" x="-25%" y="-25%" width="150%" height="150%">
+    <feGaussianBlur stdDeviation="2.5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="strongGlow" x="-60%" y="-60%" width="220%" height="220%">
+    <feGaussianBlur stdDeviation="5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="titleGlow" x="-10%" y="-40%" width="120%" height="180%">
+    <feGaussianBlur stdDeviation="3" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="bokeh" x="-150%" y="-150%" width="400%" height="400%">
+    <feGaussianBlur stdDeviation="14"/>
+  </filter>
+  <filter id="bokehSm" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="7"/>
+  </filter>
+
+  <!-- PATTERNS -->
+  <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+    <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#1A3050" stroke-width="0.35" opacity="0.45"/>
+  </pattern>
+
+  <!-- CLIPS -->
+  <clipPath id="cardClip">
+    <rect x="533" y="14" width="253" height="214" rx="13"/>
+  </clipPath>
+  <clipPath id="bannerClip">
+    <rect x="0" y="0" width="800" height="240"/>
+  </clipPath>
+  <clipPath id="chartClip">
+    <rect x="536" y="142" width="244" height="36"/>
+  </clipPath>
+
+</defs>
+
+<!-- ══════════════════════════════════════ -->
+<!--              BACKGROUND               -->
+<!-- ══════════════════════════════════════ -->
+<rect width="800" height="240" fill="url(#bg)"/>
+<rect width="800" height="240" fill="url(#bgRadial)"/>
+<rect width="800" height="240" fill="url(#grid)" opacity="0.6"/>
+
+<!-- Ambient bokeh lights -->
+<circle cx="310" cy="-10" r="80" fill="#00D4FF" opacity="0.055" filter="url(#bokeh)"/>
+<circle cx="90" cy="110" r="65" fill="#6366F1" opacity="0.06" filter="url(#bokeh)"/>
+<circle cx="500" cy="250" r="70" fill="#06B6D4" opacity="0.04" filter="url(#bokeh)"/>
+<circle cx="750" cy="100" r="55" fill="#6366F1" opacity="0.05" filter="url(#bokeh)"/>
+<circle cx="200" cy="200" r="40" fill="#00D4FF" opacity="0.035" filter="url(#bokeh)"/>
+
+<!-- Subtle top highlight bar -->
+<rect x="140" y="0" width="520" height="1" fill="url(#titleGrad)" opacity="0.5"/>
+
+<!-- Outer banner border with animated dash -->
+<rect x="0.5" y="0.5" width="799" height="239" rx="5" fill="none" stroke="url(#outerBorderGrad)" stroke-width="1" stroke-dasharray="300 900" opacity="0.6">
+  <animate attributeName="stroke-dashoffset" from="0" to="-1200" dur="12s" repeatCount="indefinite"/>
+</rect>
+
+<!-- Floating particles -->
+<circle cx="204" cy="42" r="1.5" fill="#00D4FF" opacity="0">
+  <animate attributeName="cy" values="42;29;42" dur="5s" repeatCount="indefinite"/>
+  <animate attributeName="opacity" values="0;0.65;0" dur="5s" repeatCount="indefinite"/>
+</circle>
+<circle cx="345" cy="185" r="1" fill="#818CF8" opacity="0">
+  <animate attributeName="cy" values="185;170;185" dur="6.5s" repeatCount="indefinite"/>
+  <animate attributeName="opacity" values="0;0.5;0" dur="6.5s" repeatCount="indefinite"/>
+</circle>
+<circle cx="448" cy="55" r="1.5" fill="#06B6D4" opacity="0">
+  <animate attributeName="cy" values="55;42;55" dur="4.2s" repeatCount="indefinite"/>
+  <animate attributeName="opacity" values="0;0.55;0" dur="4.2s" repeatCount="indefinite"/>
+</circle>
+<circle cx="166" cy="148" r="1" fill="#00D4FF" opacity="0">
+  <animate attributeName="cy" values="148;135;148" dur="7s" repeatCount="indefinite"/>
+  <animate attributeName="opacity" values="0;0.4;0" dur="7s" repeatCount="indefinite"/>
+</circle>
+<circle cx="472" cy="205" r="1.5" fill="#6366F1" opacity="0">
+  <animate attributeName="cy" values="205;191;205" dur="5.5s" repeatCount="indefinite"/>
+  <animate attributeName="opacity" values="0;0.5;0" dur="5.5s" repeatCount="indefinite"/>
+</circle>
+<circle cx="390" cy="22" r="1" fill="#818CF8" opacity="0">
+  <animate attributeName="cy" values="22;12;22" dur="4.8s" repeatCount="indefinite"/>
+  <animate attributeName="opacity" values="0;0.45;0" dur="4.8s" repeatCount="indefinite"/>
+</circle>
+
+<!-- ══════════════════════════════════════ -->
+<!--           LEFT — AVATAR               -->
+<!-- ══════════════════════════════════════ -->
+
+<!-- Ambient halo behind avatar -->
+<circle cx="84" cy="104" r="62" fill="#00D4FF" opacity="0.04" filter="url(#bokeh)"/>
+<circle cx="84" cy="104" r="48" fill="#6366F1" opacity="0.04" filter="url(#bokehSm)"/>
+
+<!-- Outermost subtle orbit track -->
+<circle cx="84" cy="104" r="55" fill="none" stroke="#1A3050" stroke-width="0.5"/>
+
+<!-- Outer rotating ring — neon dashed arc -->
+<circle cx="84" cy="104" r="55" fill="none" stroke="url(#ringGrad)" stroke-width="1.8" stroke-dasharray="230 120" stroke-linecap="round" filter="url(#softGlow)" opacity="0.85">
+  <animateTransform attributeName="transform" type="rotate" from="0 84 104" to="360 84 104" dur="10s" repeatCount="indefinite"/>
+</circle>
+<!-- Outer ring leading dot -->
+<circle cx="84" cy="49" r="3.5" fill="#00D4FF" filter="url(#softGlow)" opacity="0.95">
+  <animateTransform attributeName="transform" type="rotate" from="0 84 104" to="360 84 104" dur="10s" repeatCount="indefinite"/>
+</circle>
+<!-- Outer ring trailing dot -->
+<circle cx="84" cy="49" r="1.5" fill="#FFFFFF" opacity="0.8">
+  <animateTransform attributeName="transform" type="rotate" from="20 84 104" to="380 84 104" dur="10s" repeatCount="indefinite"/>
+</circle>
+
+<!-- Inner counter-rotating ring -->
+<circle cx="84" cy="104" r="46" fill="none" stroke="#6366F1" stroke-width="1.2" stroke-dasharray="140 150" stroke-linecap="round" opacity="0.65">
+  <animateTransform attributeName="transform" type="rotate" from="0 84 104" to="-360 84 104" dur="7s" repeatCount="indefinite"/>
+</circle>
+<circle cx="84" cy="58" r="2.5" fill="#818CF8" opacity="0.8">
+  <animateTransform attributeName="transform" type="rotate" from="0 84 104" to="-360 84 104" dur="7s" repeatCount="indefinite"/>
+</circle>
+
+<!-- Avatar glass disc -->
+<circle cx="84" cy="104" r="37" fill="url(#avatarGlassGrad)"/>
+<circle cx="84" cy="104" r="37" fill="none" stroke="#00D4FF" stroke-width="1.2" opacity="0.5"/>
+<!-- Inner highlight sheen -->
+<ellipse cx="80" cy="91" rx="16" ry="7" fill="white" opacity="0.03"/>
+
+<!-- SM initials -->
+<text x="84" y="98" text-anchor="middle" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="19" font-weight="700" fill="url(#titleGrad)" filter="url(#softGlow)" letter-spacing="-0.5">SM</text>
+<text x="84" y="115" text-anchor="middle" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="6.5" font-weight="500" fill="#64748B" letter-spacing="2.5">DEVELOPER</text>
+
+<!-- Pulse ring -->
+<circle cx="84" cy="104" r="39" fill="none" stroke="#00D4FF" stroke-width="0.8" opacity="0">
+  <animate attributeName="r" values="39;52;39" dur="4s" repeatCount="indefinite"/>
+  <animate attributeName="opacity" values="0.35;0;0.35" dur="4s" repeatCount="indefinite"/>
+</circle>
+
+<!-- Name block -->
+<text x="84" y="168" text-anchor="middle" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="7.5" fill="#475569" letter-spacing="0.3">Built by</text>
+<text x="84" y="181" text-anchor="middle" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="10.5" font-weight="600" fill="#E2E8F0" letter-spacing="-0.2">Susatwik Manuri</text>
+<text x="84" y="193" text-anchor="middle" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="7.5" font-weight="500" fill="#6366F1" letter-spacing="0.4">Creator · Developer OS</text>
+
+<!-- ══════════════════════════════════════ -->
+<!--          CENTER — CONTENT             -->
+<!-- ══════════════════════════════════════ -->
+
+<!-- TITLE — strongest visual element -->
+<text x="307" y="44" text-anchor="middle" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="30" font-weight="800" fill="url(#titleGrad)" filter="url(#titleGlow)" letter-spacing="-1">Developer OS</text>
+
+<!-- Shimmer sweep over title -->
+<rect x="165" y="18" width="284" height="32" fill="url(#shimmerGrad)" opacity="0" clip-path="url(#bannerClip)">
+  <animate attributeName="x" values="165;449;530" dur="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"/>
+  <animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"/>
+</rect>
+
+<!-- AI Developer Workspace pill badge -->
+<rect x="248" y="52" width="118" height="16" rx="8" fill="#0C1F38" stroke="#00D4FF" stroke-width="0.6" opacity="0.9"/>
+<circle cx="260" cy="60" r="2.5" fill="#00D4FF" opacity="0.9">
+  <animate attributeName="opacity" values="0.9;0.35;0.9" dur="2s" repeatCount="indefinite"/>
+</circle>
+<text x="307" y="64" text-anchor="middle" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="7.5" font-weight="500" fill="#7DD3FC" letter-spacing="0.3">AI Developer Workspace</text>
+
+<!-- Tagline -->
+<text x="178" y="82" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="9" font-weight="500" fill="#00D4FF" letter-spacing="0.2">Track Learning.</text>
+<text x="262" y="82" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="9" font-weight="400" fill="#94A3B8" letter-spacing="0.2">  Build Consistency.  Grow Your Career.</text>
+
+<!-- Description -->
+<text x="178" y="97" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="8" fill="#64748B" letter-spacing="0.1">AI-powered developer OS — track GitHub activity, coding progress, job pipeline,</text>
+<text x="178" y="108" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="8" fill="#64748B" letter-spacing="0.1">learning streaks and career analytics from one unified dashboard.</text>
+
+<!-- FEATURE PILLS — 4 pills in 2+2 layout -->
+<!-- Pill 1: GitHub Analytics -->
+<rect x="178" y="118" width="108" height="20" rx="10" fill="url(#pillGrad1)" stroke="#00D4FF" stroke-width="0.7" opacity="0.95"/>
+<rect x="178" y="118" width="108" height="20" rx="10" fill="none" stroke="#00D4FF" stroke-width="0.7">
+  <animate attributeName="opacity" values="0.95;0.4;0.95" dur="3.5s" repeatCount="indefinite"/>
+</rect>
+<circle cx="191" cy="128" r="2.8" fill="#00D4FF" opacity="0.85"/>
+<text x="198" y="132" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="7.5" font-weight="500" fill="#BAE6FD" letter-spacing="0.2">GitHub Analytics</text>
+
+<!-- Pill 2: Coding Analytics -->
+<rect x="292" y="118" width="112" height="20" rx="10" fill="url(#pillGrad2)" stroke="#818CF8" stroke-width="0.7" opacity="0.95"/>
+<rect x="292" y="118" width="112" height="20" rx="10" fill="none" stroke="#818CF8" stroke-width="0.7">
+  <animate attributeName="opacity" values="0.95;0.4;0.95" dur="4s" repeatCount="indefinite"/>
+</rect>
+<circle cx="305" cy="128" r="2.8" fill="#818CF8" opacity="0.85"/>
+<text x="312" y="132" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="7.5" font-weight="500" fill="#C7D2FE" letter-spacing="0.2">Coding Analytics</text>
+
+<!-- Pill 3: Learning Tracker -->
+<rect x="178" y="142" width="110" height="20" rx="10" fill="url(#pillGrad3)" stroke="#06B6D4" stroke-width="0.7" opacity="0.95"/>
+<rect x="178" y="142" width="110" height="20" rx="10" fill="none" stroke="#06B6D4" stroke-width="0.7">
+  <animate attributeName="opacity" values="0.95;0.4;0.95" dur="4.5s" repeatCount="indefinite"/>
+</rect>
+<circle cx="191" cy="152" r="2.8" fill="#06B6D4" opacity="0.85"/>
+<text x="198" y="156" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="7.5" font-weight="500" fill="#A5F3FC" letter-spacing="0.2">Learning Tracker</text>
+
+<!-- Pill 4: Career Tracker -->
+<rect x="294" y="142" width="106" height="20" rx="10" fill="url(#pillGrad2)" stroke="#6366F1" stroke-width="0.7" opacity="0.95"/>
+<rect x="294" y="142" width="106" height="20" rx="10" fill="none" stroke="#6366F1" stroke-width="0.7">
+  <animate attributeName="opacity" values="0.95;0.4;0.95" dur="3.8s" repeatCount="indefinite"/>
+</rect>
+<circle cx="307" cy="152" r="2.8" fill="#6366F1" opacity="0.85"/>
+<text x="314" y="156" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="7.5" font-weight="500" fill="#C7D2FE" letter-spacing="0.2">Career Tracker</text>
+
+<!-- STATUS CARDS — 4 cards row -->
+<rect x="178" y="168" width="66" height="42" rx="7" fill="url(#statCard1)" stroke="#00D4FF" stroke-width="0.55"/>
+<circle cx="193" cy="181" r="2.2" fill="#00D4FF">
+  <animate attributeName="opacity" values="1;0.3;1" dur="2.4s" repeatCount="indefinite"/>
+</circle>
+<text x="211" y="184" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="8.5" font-weight="700" fill="#00D4FF" filter="url(#softGlow)">Connected</text>
+<text x="211" y="198" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="7" fill="#475569">GitHub</text>
+
+<rect x="250" y="168" width="66" height="42" rx="7" fill="url(#statCard2)" stroke="#6366F1" stroke-width="0.55"/>
+<circle cx="265" cy="181" r="2.2" fill="#818CF8">
+  <animate attributeName="opacity" values="1;0.3;1" dur="3.1s" repeatCount="indefinite"/>
+</circle>
+<text x="283" y="184" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="8.5" font-weight="700" fill="#818CF8" filter="url(#softGlow)">Tracking</text>
+<text x="283" y="198" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="7" fill="#475569">Career</text>
+
+<rect x="322" y="168" width="66" height="42" rx="7" fill="url(#statCard3)" stroke="#06B6D4" stroke-width="0.55"/>
+<circle cx="337" cy="181" r="2.2" fill="#06B6D4">
+  <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+</circle>
+<text x="355" y="184" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="8.5" font-weight="700" fill="#06B6D4" filter="url(#softGlow)">Active</text>
+<text x="355" y="198" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="7" fill="#475569">Learning</text>
+
+<rect x="394" y="168" width="66" height="42" rx="7" fill="url(#statCard1)" stroke="#00D4FF" stroke-width="0.55"/>
+<circle cx="409" cy="181" r="2.2" fill="#00D4FF">
+  <animate attributeName="opacity" values="1;0.3;1" dur="2.8s" repeatCount="indefinite"/>
+</circle>
+<text x="427" y="184" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="8.5" font-weight="700" fill="#00D4FF" filter="url(#softGlow)">Synced</text>
+<text x="427" y="198" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="7" fill="#475569">Analytics</text>
+
+<!-- FOOTER -->
+<line x1="178" y1="220" x2="468" y2="220" stroke="url(#footerGrad)" stroke-width="0.5"/>
+<text x="323" y="232" text-anchor="middle" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="7" fill="#334155" letter-spacing="0.8">DEVELOPER OS  ·  FASTAPI  ·  DOCKER  ·  GITHUB ACTIONS  ·  RENDER</text>
+
+<!-- ══════════════════════════════════════ -->
+<!--        RIGHT — DASHBOARD CARD         -->
+<!-- ══════════════════════════════════════ -->
+
+<!-- Card drop shadow layer -->
+<rect x="537" y="20" width="253" height="214" rx="13" fill="#000C1A" opacity="0.5"/>
+
+<!-- Card body -->
+<rect x="533" y="14" width="253" height="214" rx="13" fill="url(#cardGrad)"/>
+
+<!-- Top sheen highlight -->
+<rect x="533" y="14" width="253" height="60" rx="13" fill="url(#cardTopSheen)"/>
+
+<!-- Card border — static subtle -->
+<rect x="533" y="14" width="253" height="214" rx="13" fill="none" stroke="#1E3A5F" stroke-width="0.8"/>
+
+<!-- Card border — animated gradient dash -->
+<rect x="533" y="14" width="253" height="214" rx="13" fill="none" stroke="url(#cardBorderGrad)" stroke-width="1" stroke-dasharray="90 240">
+  <animate attributeName="stroke-dashoffset" from="0" to="-330" dur="7s" repeatCount="indefinite"/>
+</rect>
+
+<!-- Shine sweep -->
+<rect x="533" y="14" width="90" height="214" fill="url(#shimmerGrad)" opacity="0" clip-path="url(#cardClip)">
+  <animate attributeName="x" values="533;786;533" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"/>
+  <animate attributeName="opacity" values="0;0.7;0" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"/>
+</rect>
+
+<!-- ── CARD HEADER ── -->
+<!-- macOS traffic lights -->
+<circle cx="549" cy="28" r="4.5" fill="#FF5F57"/>
+<circle cx="562" cy="28" r="4.5" fill="#FFBD2E"/>
+<circle cx="575" cy="28" r="4.5" fill="#28CA41"/>
+<!-- Window title text -->
+<text x="596" y="32" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="7.5" font-weight="500" fill="#334155" letter-spacing="0.3">developer-os.app</text>
+
+<!-- Live Analytics badge -->
+<rect x="676" y="20" width="100" height="16" rx="8" fill="#071B2E" stroke="#00D4FF" stroke-width="0.6"/>
+<circle cx="686" cy="28" r="2.8" fill="#00D4FF">
+  <animate attributeName="opacity" values="1;0.25;1" dur="1.4s" repeatCount="indefinite"/>
+  <animate attributeName="r" values="2.8;3.5;2.8" dur="1.4s" repeatCount="indefinite"/>
+</circle>
+<text x="692" y="32" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="7.5" font-weight="600" fill="#00D4FF" letter-spacing="0.2">Live Analytics</text>
+
+<!-- Header divider -->
+<line x1="533" y1="43" x2="786" y2="43" stroke="url(#divGrad)" stroke-width="0.6"/>
+
+<!-- ── ACTIVITY OVERVIEW — HEATMAP ── -->
+<text x="540" y="55" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="7.5" font-weight="600" fill="#475569" letter-spacing="1">ACTIVITY OVERVIEW</text>
+
+<!-- Heatmap 12 cols × 5 rows — varied intensity -->
+<g>
+  <!-- row 1 y=62 -->
+  <rect x="540" y="62" width="8" height="8" rx="1.5" fill="#0D2535" opacity="0.9"/>
+  <rect x="551" y="62" width="8" height="8" rx="1.5" fill="#0B3A2A" opacity="0.9"/>
+  <rect x="562" y="62" width="8" height="8" rx="1.5" fill="#0E5038" opacity="0.9"/>
+  <rect x="573" y="62" width="8" height="8" rx="1.5" fill="#00D4FF" opacity="0.55"/>
+  <rect x="584" y="62" width="8" height="8" rx="1.5" fill="#0E5038" opacity="0.9"/>
+  <rect x="595" y="62" width="8" height="8" rx="1.5" fill="#0D2535" opacity="0.9"/>
+  <rect x="606" y="62" width="8" height="8" rx="1.5" fill="#00D4FF" opacity="0.35"/>
+  <rect x="617" y="62" width="8" height="8" rx="1.5" fill="#0B3A2A" opacity="0.9"/>
+  <rect x="628" y="62" width="8" height="8" rx="1.5" fill="#00D4FF" opacity="0.8"/>
+  <rect x="639" y="62" width="8" height="8" rx="1.5" fill="#0E5038" opacity="0.9"/>
+  <rect x="650" y="62" width="8" height="8" rx="1.5" fill="#0D2535" opacity="0.9"/>
+  <rect x="661" y="62" width="8" height="8" rx="1.5" fill="#00D4FF" opacity="0.45"/>
+  <!-- row 2 y=73 -->
+  <rect x="540" y="73" width="8" height="8" rx="1.5" fill="#0E5038" opacity="0.9"/>
+  <rect x="551" y="73" width="8" height="8" rx="1.5" fill="#00D4FF" opacity="0.7"/>
+  <rect x="562" y="73" width="8" height="8" rx="1.5" fill="#0D2535" opacity="0.9"/>
+  <rect x="573" y="73" width="8" height="8" rx="1.5" fill="#0B3A2A" opacity="0.9"/>
+  <rect x="584" y="73" width="8" height="8" rx="1.5" fill="#00D4FF" opacity="0.9" filter="url(#softGlow)"/>
+  <rect x="595" y="73" width="8" height="8" rx="1.5" fill="#00D4FF" opacity="0.5"/>
+  <rect x="606" y="73" width="8" height="8" rx="1.5" fill="#0E5038" opacity="0.9"/>
+  <rect x="617" y="73" width="8" height="8" rx="1.5" fill="#00D4FF" opacity="0.65"/>
+  <rect x="628" y="73" width="8" height="8" rx="1.5" fill="#0D2535" opacity="0.9"/>
+  <rect x="639" y="73" width="8" height="8" rx="1.5" fill="#00D4FF" opacity="0.8"/>
+  <rect x="650" y="73" width="8" height="8" rx="1.5" fill="#0B3A2A" opacity="0.9"/>
+  <rect x="661" y="73" width="8" height="8" rx="1.5" fill="#0E5038" opacity="0.9"/>
+  <!-- row 3 y=84 -->
+  <rect x="540" y="84" width="8" height="8" rx="1.5" fill="#00D4FF" opacity="0.4"/>
+  <rect x="551" y="84" width="8" height="8" rx="1.5" fill="#0D2535" opacity="0.9"/>
+  <rect x="562" y="84" width="8" height="8" rx="1.5" fill="#00D4FF" opacity="0.75"/>
+  <rect x="573" y="84" width="8" height="8" rx="1.5" fill="#0E5038" opacity="0.9"/>
+  <rect x="584" y="84" width="8" height="8" rx="1.5" fill="#0B3A2A" opacity="0.9"/>
+  <rect x="595" y="84" width="8" height="8" rx="1.5" fill="#00D4FF" opacity="0.9" filter="url(#softGlow)"/>
+  <rect x="606" y="84" width="8" height="8" rx="1.5" fill="#0D2535" opacity="0.9"/>
+  <rect x="617" y="84" width="8" height="8" rx="1.5" fill="#0E5038" opacity="0.9"/>
+  <rect x="628" y="84" width="8" height="8" rx="1.5" fill="#00D4FF" opacity="0.55"/>
+  <rect x="639" y="84" width="8" height="8" rx="1.5" fill="#0D2535" opacity="0.9"/>
+  <rect x="650" y="84" width="8" height="8" rx="1.5" fill="#00D4FF" opacity="0.7"/>
+  <rect x="661" y="84" width="8" height="8" rx="1.5" fill="#0B3A2A" opacity="0.9"/>
+  <!-- row 4 y=95 -->
+  <rect x="540" y="95" width="8" height="8" rx="1.5" fill="#0B3A2A" opacity="0.9"/>
+  <rect x="551" y="95" width="8" height="8" rx="1.5" fill="#00D4FF" opacity="0.6"/>
+  <rect x="562" y="95" width="8" height="8" rx="1.5" fill="#0E5038" opacity="0.9"/>
+  <rect x="573" y="95" width="8" height="8" rx="1.5" fill="#00D4FF" opacity="0.85" filter="url(#softGlow)"/>
+  <rect x="584" y="95" width="8" height="8" rx="1.5" fill="#0D2535" opacity="0.9"/>
+  <rect x="595" y="95" width="8" height="8" rx="1.5" fill="#0B3A2A" opacity="0.9"/>
+  <rect x="606" y="95" width="8" height="8" rx="1.5" fill="#00D4FF" opacity="0.5"/>
+  <rect x="617" y="95" width="8" height="8" rx="1.5" fill="#0D2535" opacity="0.9"/>
+  <rect x="628" y="95" width="8" height="8" rx="1.5" fill="#0E5038" opacity="0.9"/>
+  <rect x="639" y="95" width="8" height="8" rx="1.5" fill="#00D4FF" opacity="0.6"/>
+  <rect x="650" y="95" width="8" height="8" rx="1.5" fill="#00D4FF" opacity="0.9" filter="url(#softGlow)"/>
+  <rect x="661" y="95" width="8" height="8" rx="1.5" fill="#0E5038" opacity="0.9"/>
+  <!-- row 5 y=106 -->
+  <rect x="540" y="106" width="8" height="8" rx="1.5" fill="#00D4FF" opacity="0.7"/>
+  <rect x="551" y="106" width="8" height="8" rx="1.5" fill="#0D2535" opacity="0.9"/>
+  <rect x="562" y="106" width="8" height="8" rx="1.5" fill="#0B3A2A" opacity="0.9"/>
+  <rect x="573" y="106" width="8" height="8" rx="1.5" fill="#0E5038" opacity="0.9"/>
+  <rect x="584" y="106" width="8" height="8" rx="1.5" fill="#00D4FF" opacity="0.45"/>
+  <rect x="595" y="106" width="8" height="8" rx="1.5" fill="#0D2535" opacity="0.9"/>
+  <rect x="606" y="106" width="8" height="8" rx="1.5" fill="#00D4FF" opacity="0.8" filter="url(#softGlow)"/>
+  <rect x="617" y="106" width="8" height="8" rx="1.5" fill="#0B3A2A" opacity="0.9"/>
+  <rect x="628" y="106" width="8" height="8" rx="1.5" fill="#0E5038" opacity="0.9"/>
+  <rect x="639" y="106" width="8" height="8" rx="1.5" fill="#00D4FF" opacity="0.35"/>
+  <rect x="650" y="106" width="8" height="8" rx="1.5" fill="#0D2535" opacity="0.9"/>
+  <rect x="661" y="106" width="8" height="8" rx="1.5" fill="#00D4FF" opacity="0.6"/>
+</g>
+
+<!-- Section divider -->
+<line x1="533" y1="123" x2="786" y2="123" stroke="url(#divGrad)" stroke-width="0.5"/>
+
+<!-- ── PERFORMANCE TRENDS — CHART ── -->
+<text x="540" y="134" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="7.5" font-weight="600" fill="#475569" letter-spacing="1">PERFORMANCE TRENDS</text>
+
+<!-- Chart baseline -->
+<line x1="540" y1="177" x2="778" y2="177" stroke="#1A2E40" stroke-width="0.5"/>
+
+<!-- Smooth chart area — clip to bounds -->
+<path d="M540 172 C548 169,554 165,562 162 C570 159,576 163,584 157 C592 151,598 147,606 141 C614 135,620 130,628 125 C636 120,642 117,650 113 C658 109,664 105,672 101 C680 97,686 94,694 90 C702 86,708 84,716 80 C724 76,730 74,738 70 C746 66,752 64,760 61 C768 58,774 56,778 54 L778 177 L540 177 Z" fill="url(#chartAreaGrad)" clip-path="url(#chartClip)"/>
+
+<!-- Chart grid lines subtle -->
+<line x1="540" y1="163" x2="778" y2="163" stroke="#1A2E40" stroke-width="0.4" stroke-dasharray="3 4"/>
+<line x1="540" y1="150" x2="778" y2="150" stroke="#1A2E40" stroke-width="0.4" stroke-dasharray="3 4"/>
+
+<!-- Chart line — smooth curve, animated draw -->
+<path d="M540 172 C548 169,554 165,562 162 C570 159,576 163,584 157 C592 151,598 147,606 141 C614 135,620 130,628 125 C636 120,642 117,650 113 C658 109,664 105,672 101 C680 97,686 94,694 90 C702 86,708 84,716 80 C724 76,730 74,738 70 C746 66,752 64,760 61 C768 58,774 56,778 54" fill="none" stroke="#00D4FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" filter="url(#softGlow)" stroke-dasharray="680" stroke-dashoffset="680">
+  <animate attributeName="stroke-dashoffset" from="680" to="0" dur="3.5s" fill="freeze"/>
+</path>
+
+<!-- Glowing endpoint -->
+<circle cx="778" cy="54" r="5" fill="#00D4FF" opacity="0.25" filter="url(#strongGlow)">
+  <animate attributeName="r" values="4;7;4" dur="2.5s" repeatCount="indefinite"/>
+  <animate attributeName="opacity" values="0.25;0.08;0.25" dur="2.5s" repeatCount="indefinite"/>
+</circle>
+<circle cx="778" cy="54" r="3.5" fill="#00D4FF" filter="url(#softGlow)">
+  <animate attributeName="r" values="3;4.2;3" dur="2.5s" repeatCount="indefinite"/>
+</circle>
+<circle cx="778" cy="54" r="1.8" fill="#FFFFFF"/>
+
+<!-- Section divider -->
+<line x1="533" y1="185" x2="786" y2="185" stroke="url(#divGrad)" stroke-width="0.5"/>
+
+<!-- ── MINI STATUS ROW ── -->
+<text x="559" y="198" text-anchor="middle" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="7.5" font-weight="700" fill="#00D4FF">Connected</text>
+<text x="559" y="209" text-anchor="middle" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="6.5" fill="#334155">GitHub</text>
+<circle cx="559" cy="193" r="2" fill="#00D4FF" opacity="0">
+  <animate attributeName="opacity" values="0;0.7;0" dur="3s" repeatCount="indefinite"/>
+</circle>
+
+<line x1="589" y1="190" x2="589" y2="213" stroke="#1A2E40" stroke-width="0.5"/>
+
+<text x="619" y="198" text-anchor="middle" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="7.5" font-weight="700" fill="#818CF8">Tracking</text>
+<text x="619" y="209" text-anchor="middle" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="6.5" fill="#334155">Career</text>
+
+<line x1="649" y1="190" x2="649" y2="213" stroke="#1A2E40" stroke-width="0.5"/>
+
+<text x="679" y="198" text-anchor="middle" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="7.5" font-weight="700" fill="#06B6D4">Active</text>
+<text x="679" y="209" text-anchor="middle" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="6.5" fill="#334155">Learning</text>
+
+<line x1="709" y1="190" x2="709" y2="213" stroke="#1A2E40" stroke-width="0.5"/>
+
+<text x="748" y="198" text-anchor="middle" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="7.5" font-weight="700" fill="#00D4FF">Synced</text>
+<text x="748" y="209" text-anchor="middle" font-family="Inter,'Segoe UI',Arial,sans-serif" font-size="6.5" fill="#334155">Analytics</text>
+
+<!-- Card bottom accent -->
+<rect x="533" y="224" width="253" height="4" rx="0" fill="none"/>
+<line x1="560" y1="226" x2="760" y2="226" stroke="url(#titleGrad)" stroke-width="0.8" opacity="0.35"/>
+
+</svg>

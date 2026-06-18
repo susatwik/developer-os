@@ -27,7 +27,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/hero-banner.png" alt="Developer OS hero banner" width="100%" />
+  <img src="assets/hero-banner.svg" alt="Developer OS Banner" />
 </p>
 
 ---
