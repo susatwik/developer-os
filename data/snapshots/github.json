@@ -111,6 +111,20 @@
         "recent_repositories": [],
         "contribution_days": []
       }
+    },
+    {
+      "fetched_at": "2026-06-18T06:00:32.595385+00:00",
+      "status": "error",
+      "error": "Missing GitHub username. Set it in config.yaml or the matching DEVOS_* environment variable.",
+      "data": {
+        "username": "",
+        "public_repos": 0,
+        "stars": 0,
+        "followers": 0,
+        "contributions_total": 0,
+        "recent_repositories": [],
+        "contribution_days": []
+      }
     }
   ]
 }

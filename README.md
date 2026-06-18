@@ -9,6 +9,10 @@ Developer OS is a production-style developer analytics platform for tracking lea
 
 Current release: `1.0.0`
 
+## Live Demo
+
+https://developer-os.onrender.com
+
 ## Project Overview
 
 Developer OS combines a lightweight Python CLI, JSON-backed manual tracking, CSV import/export, live integrations for LeetCode and GitHub, and GitHub Actions automation to create a maintainable personal analytics hub.
