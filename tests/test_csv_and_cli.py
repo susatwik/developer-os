@@ -134,7 +134,8 @@ def test_cli_main_routes_commands(tmp_path: Path, monkeypatch: pytest.MonkeyPatc
 
     def fake_write_dashboard(context: object) -> None:
         captured["dashboard"] = context
-        readme_path.write_text("dashboard", encoding="utf-8")
+        report_path.parent.mkdir(parents=True, exist_ok=True)
+        report_path.write_text("dashboard", encoding="utf-8")
 
     monkeypatch.setattr(cli, "write_dashboard", fake_write_dashboard)
     monkeypatch.setattr(
@@ -146,8 +147,40 @@ def test_cli_main_routes_commands(tmp_path: Path, monkeypatch: pytest.MonkeyPatc
     assert cli.main(["generate-dashboard", "--report", "weekly"]) == 0
     assert captured["dashboard"] is fake_context
     assert captured["report"][0] == "weekly"
-    assert readme_path.exists()
+    assert report_path.exists()
 
     readme_path.write_text("expected", encoding="utf-8")
-    monkeypatch.setattr(cli, "generate_dashboard", lambda context=None: "expected")
+    monkeypatch.setattr(cli, "_readme_validation_errors", lambda text: [])
     assert cli.main(["check"]) == 0
+
+
+def test_readme_validation_errors_detect_bad_api_count() -> None:
+    assets = "\n".join(f"![asset]({asset})" for asset in cli.REQUIRED_README_ASSETS)
+    api_rows = "\n".join(
+        [
+            "## API Reference",
+            "",
+            "| Method | Endpoint | Purpose |",
+            "| --- | --- | --- |",
+            "| `GET` | `/dashboard` | Main dashboard view |",
+            "| `GET` | `/stats` | Statistics page |",
+            "| `GET` | `/search` | Search entries |",
+            "| `GET` | `/health` | Health check |",
+            "| `GET` | `/version` | App version |",
+            "| `POST` | `/refresh` | Refresh dashboard data |",
+            "| `POST` | `/notes` | Add a learning note |",
+            "| `POST` | `/coding` | Add a coding entry |",
+        ]
+    )
+    readme_text = f"""
+# Developer OS
+
+<img src="https://img.shields.io/badge/api-8%20routes-14b8a6?style=flat-square" alt="API" />
+
+{assets}
+
+{api_rows}
+""".strip()
+
+    errors = cli._readme_validation_errors(readme_text)
+    assert any("API badge reports 8 routes" in error for error in errors)

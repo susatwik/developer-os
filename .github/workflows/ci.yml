@@ -25,6 +25,9 @@ jobs:
       - name: Lint
         run: ruff check developer_os scripts tests
 
+      - name: Validate README and release assets
+        run: python3 -m developer_os.cli check
+
   test:
     runs-on: ubuntu-latest
     steps:

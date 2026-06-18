@@ -6,16 +6,18 @@ Use this checklist before tagging `v1.0.0`.
 
 - [x] Run `ruff check developer_os scripts tests`
 - [x] Run `pytest`
+- [x] Run `python3 -m developer_os.cli check`
 - [x] Run `python -m build --no-isolation`
 - [x] Confirm test coverage is above 80%
 
 ## Documentation
 
-- [x] README badges point to the correct repository
+- [x] README badges point to the correct repository and API count
 - [x] Installation instructions are current
 - [x] Deployment instructions cover Docker, Render, Railway, and Fly.io
 - [x] Contributing, code of conduct, security, and changelog files exist
 - [x] Demo and interview docs exist
+- [x] README-referencing assets exist and are tracked
 
 ## Packaging and Versioning
 
@@ -40,4 +42,5 @@ Use this checklist before tagging `v1.0.0`.
 
 ## Final Sign-Off
 
+- [x] README is the source of truth and automation does not overwrite it
 - [x] Repository is ready for public release

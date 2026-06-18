@@ -1,4 +1,4 @@
-"""README/dashboard generation."""
+"""Dashboard and report generation."""
 
 from __future__ import annotations
 
@@ -67,7 +67,7 @@ def build_dashboard(
         "- Lightweight FastAPI web dashboard for viewing stats and adding entries.",
         "- Live LeetCode integration with historical snapshots.",
         "- Live GitHub integration for profile and repository analytics.",
-        "- Automated README dashboard generation from the latest data.",
+        "- Automated dashboard report generation from the latest data.",
         "- Scheduled GitHub Actions workflows for daily, weekly, and monthly refreshes.",
         "",
         "## Architecture Diagram",
@@ -245,12 +245,12 @@ def build_dashboard(
             "├── config.yaml             # Local configuration",
             "├── .github/workflows/      # Scheduled automation",
             "├── pyproject.toml          # Project metadata",
-            "└── README.md               # Generated dashboard",
+            "└── README.md               # Premium landing page",
             "```",
             "",
         "## Automation",
         "",
-        "- Daily workflow refreshes `README.md` and `data/reports/dashboard.md`.",
+        "- Daily workflow refreshes `data/reports/dashboard.md` and leaves `README.md` untouched.",
         "- Weekly workflow refreshes the dashboard snapshot and the weekly report.",
         "- Monthly workflow refreshes the dashboard snapshot and the monthly report.",
         "",

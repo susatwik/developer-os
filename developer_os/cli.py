@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -47,6 +48,22 @@ CODING_PATH = CODING_DIR / "problems.json"
 JOBS_PATH = JOB_DIR / "applications.json"
 README_REPORT_PATH = REPORT_DIR / "dashboard.md"
 
+REQUIRED_README_ASSETS = (
+    "assets/hero-banner.png",
+    "assets/dashboard.png",
+    "assets/statistics.png",
+    "assets/search.png",
+    "assets/mobile-view.png",
+    "assets/demo.gif",
+    "assets/logo.png",
+)
+BRANDING_ASSETS = (
+    "assets/social-preview.png",
+    "assets/favicon.png",
+    "assets/icon.png",
+)
+EXPECTED_API_ENDPOINT_COUNT = 9
+
 NOTE_SCHEMA = CSVSchema("learning notes", ["subject", "topic", "summary", "date"])
 CODING_SCHEMA = CSVSchema("coding progress", ["platform", "name", "difficulty", "topic", "date"])
 JOBS_SCHEMA = CSVSchema("job applications", ["company", "role", "status", "application_date"])
@@ -58,6 +75,7 @@ def ensure_layout() -> None:
     for directory in TRACKER_DIRS:
         directory.mkdir(parents=True, exist_ok=True)
     SNAPSHOTS_DIR.mkdir(parents=True, exist_ok=True)
+
 
 def generate_context(refresh: bool = True):
     settings = load_settings()
@@ -83,7 +101,6 @@ def generate_dashboard(context=None) -> str:
 
 def write_dashboard(context=None) -> None:
     dashboard = generate_dashboard(context)
-    README_PATH.write_text(dashboard, encoding="utf-8")
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
     README_REPORT_PATH.write_text(dashboard, encoding="utf-8")
 
@@ -93,6 +110,71 @@ def write_report(report_name: str, title: str, context=None) -> None:
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
     report_path = REPORT_DIR / f"{report_name}.md"
     report_path.write_text(build_report(title, dashboard), encoding="utf-8")
+
+
+def _extract_section(text: str, heading: str) -> list[str]:
+    lines = text.splitlines()
+    try:
+        start = next(index for index, line in enumerate(lines) if line.strip() == heading)
+    except StopIteration:
+        return []
+
+    section: list[str] = []
+    for line in lines[start + 1 :]:
+        if line.startswith("## ") and line.strip() != heading:
+            break
+        section.append(line)
+    return section
+
+
+def _readme_validation_errors(readme_text: str) -> list[str]:
+    errors: list[str] = []
+    normalized = readme_text.casefold()
+
+    if not readme_text.strip():
+        errors.append("README.md is missing or empty.")
+        return errors
+
+    for asset in REQUIRED_README_ASSETS:
+        if asset not in readme_text:
+            errors.append(f"README.md is missing the asset reference `{asset}`.")
+        elif not (ROOT / asset).exists():
+            errors.append(f"Referenced asset `{asset}` is missing from the repository.")
+
+    for asset in BRANDING_ASSETS:
+        if not (ROOT / asset).exists():
+            errors.append(f"Branding asset `{asset}` is missing from the repository.")
+
+    if "dashboard-screenshot-placeholder.svg" in readme_text:
+        errors.append("README.md still references the placeholder screenshot asset.")
+
+    match = re.search(r"api-(\d+)(?:%20|\s)+routes", normalized)
+    if not match:
+        errors.append("README.md is missing the API routes badge.")
+        api_badge_count = None
+    else:
+        api_badge_count = int(match.group(1))
+        if api_badge_count != EXPECTED_API_ENDPOINT_COUNT:
+            errors.append(
+                f"README.md API badge reports {api_badge_count} routes, expected {EXPECTED_API_ENDPOINT_COUNT}."
+            )
+
+    api_section = _extract_section(readme_text, "## API Reference")
+    endpoint_rows = [
+        line
+        for line in api_section
+        if line.startswith("| `GET` |") or line.startswith("| `POST` |")
+    ]
+    if len(endpoint_rows) != EXPECTED_API_ENDPOINT_COUNT:
+        errors.append(
+            f"README.md API reference lists {len(endpoint_rows)} endpoints, expected {EXPECTED_API_ENDPOINT_COUNT}."
+        )
+    elif api_badge_count is not None and len(endpoint_rows) != api_badge_count:
+        errors.append(
+            f"README.md API badge and API reference disagree: badge shows {api_badge_count}, table lists {len(endpoint_rows)}."
+        )
+
+    return errors
 
 
 def _require_text(row: dict[str, str], field: str, row_number: int, schema_name: str) -> str:
@@ -294,10 +376,10 @@ def build_parser() -> argparse.ArgumentParser:
     templates = subparsers.add_parser("generate-csv-templates", help="generate sample CSV templates")
     templates.add_argument("--output-dir", type=Path, default=ROOT / "templates")
 
-    generate = subparsers.add_parser("generate-dashboard", help="regenerate README.md and dashboard output")
+    generate = subparsers.add_parser("generate-dashboard", help="refresh dashboard reports")
     generate.add_argument("--report", choices=["daily", "weekly", "monthly"])
 
-    subparsers.add_parser("check", help="verify that README.md matches the generated dashboard")
+    subparsers.add_parser("check", help="verify README.md and release assets")
 
     return parser
 
@@ -394,7 +476,7 @@ def main(argv: list[str] | None = None) -> int:
                     "monthly": "Developer OS Monthly Report",
                 }
                 write_report(args.report, report_titles[args.report], context)
-            print(f"Updated {README_PATH.relative_to(ROOT)}")
+            print(f"Updated {README_REPORT_PATH.relative_to(ROOT)}")
             return 0
         except DeveloperOSError as exc:
             print(f"Generation failed: {exc}", file=sys.stderr)
@@ -402,15 +484,16 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.command == "check":
         try:
-            context = generate_context(refresh=False)
             current = README_PATH.read_text(encoding="utf-8") if README_PATH.exists() else ""
-            expected = generate_dashboard(context)
-            if current != expected:
-                print("README.md is out of date. Run `developer-os generate-dashboard`.")
+            errors = _readme_validation_errors(current)
+            if errors:
+                print("README.md validation failed:")
+                for error in errors:
+                    print(f"- {error}")
                 return 1
-            print("README.md is up to date.")
+            print("README.md is valid and release assets are aligned.")
             return 0
-        except DeveloperOSError as exc:
+        except OSError as exc:
             print(f"Check failed: {exc}", file=sys.stderr)
             return 1
 

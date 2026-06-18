@@ -28,11 +28,14 @@ jobs:
       - name: Run monthly report
         run: python3 scripts/update.py generate-dashboard --report monthly
 
+      - name: Validate README and release assets
+        run: python3 -m developer_os.cli check
+
       - name: Commit generated files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md data/reports/dashboard.md data/reports/monthly.md
+          git add data/reports/dashboard.md data/reports/monthly.md
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
