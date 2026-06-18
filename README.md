@@ -188,6 +188,12 @@ developer-os/
 - Weekly workflow refreshes the dashboard snapshot and the weekly report.
 - Monthly workflow refreshes the dashboard snapshot and the monthly report.
 
+## GitHub Streak Maintenance
+
+- A daily GitHub Actions workflow updates `data/streak/heartbeat.txt` with a UTC timestamp.
+- When the heartbeat changes, the workflow creates a single commit with `chore(streak): daily heartbeat` and pushes it to `main`.
+- The workflow also supports manual runs through `workflow_dispatch`.
+
 ## Web Dashboard
 
 - Start the web app with `developer-os-web` or `uvicorn developer_os.webapp:app --reload`.

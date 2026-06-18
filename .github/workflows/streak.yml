@@ -1,0 +1,45 @@
+name: GitHub Streak Heartbeat
+
+on:
+  schedule:
+    - cron: "0 1 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update heartbeat
+        run: |
+          mkdir -p data/streak
+          timestamp="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+          printf '%s\n' "$timestamp" > data/streak/heartbeat.txt
+
+      - name: Commit heartbeat
+        run: |
+          if git diff --quiet -- data/streak/heartbeat.txt; then
+            echo "Heartbeat already up to date."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/streak/heartbeat.txt
+
+          if git diff --cached --quiet; then
+            echo "No staged heartbeat changes."
+            exit 0
+          fi
+
+          git commit -m "chore(streak): daily heartbeat"
+          git push origin HEAD:main
